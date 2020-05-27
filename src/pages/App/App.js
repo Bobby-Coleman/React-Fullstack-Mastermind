@@ -3,6 +3,7 @@ import './App.css';
 import GamePage from '../../pages/GamePage/GamePage';
 import { Route, Switch } from 'react-router-dom';
 import SettingsPage from '../SettingsPage/SettingsPage';
+import HighScoresPage from '../HighScoresPage/HighScoresPage';
 
 const colors = {
   Easy: ['#7CCCE5', '#FDE47F', '#E04644', '#B576AD'],
@@ -171,6 +172,12 @@ class App extends Component {
               colorsLookup={colors}
               difficulty={this.state.difficulty}
               handleDifficultyChange={this.handleDifficultyChange}
+            />
+          } />
+              } />
+          <Route exact path='/high-scores' render={props => 
+            <HighScoresPage
+              {...props} 
             />
           } />
         </Switch>
