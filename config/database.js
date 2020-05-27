@@ -5,8 +5,14 @@ mongoose.connect(process.env.DATABASE_URL, {
     useUnifiedTopology: true,
 });
 
-mongoose.connections.on("connected", () => {
+// mongoose.connections.on("connected", () => {
+//     console.log(`Mongoose connected to ${process.env.DATABASE_URL}`)
+// })
+
+const db = mongoose.connection;
+
+db.once('connected', () => {
     console.log(`Mongoose connected to ${process.env.DATABASE_URL}`)
-})
+  });
 
 module.exports = mongoose;

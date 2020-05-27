@@ -1,5 +1,5 @@
 let router = require('express').Router();
-// require controller 
+const scoresCtrl = require('../controllers/scores')
 
 // GET /api/scores
 router.get('/scores', scoresCtrl.index);
